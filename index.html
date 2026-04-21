@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amtoi | Good Vibes, Every Day</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<script src="script.js"></script>
+<body>
+
+    <!-- HEADER -->
+     <div class="container mx-auto flex h-20 items-center px-5 md:px-6">
+
+    <!-- LEFT (Logo) -->
+    <div class="flex items-center gap-2">
+        <div class="flex items-center">
+            <a href="#">
+                <img src="images/logo.png" alt="Amtoi Logo" class="logo-img">
+            </a>
+        </div>
+    </div>
+
+    <!-- RIGHT SIDE (Nav + Buttons) -->
+    <div class="ml-auto flex items-center gap-10">
+        
+        <nav class="hidden md:flex items-center gap-10 text-sm font-medium text-gray-600">
+            <a href="#" class="text-blue-600">Home</a>
+            <a href="#products" class="hover:text-blue-600 transition-colors">Product</a>
+            <a href="#about" class="hover:text-blue-600 transition-colors">About Us</a>
+            <a href="#footer" class="hover:text-blue-600 transition-colors">Contact</a>
+        </nav>
+
+        <div class="flex items-center gap-5">
+            <button class="home-btn" onclick="openEnquiry()">
+                Product Enquiry
+            </button>
+</div>
+
+    </div>
+</div>
+
+    <!-- HERO -->
+    <!-- HERO SECTION - BIGGER CIRCLE PHOTO -->
+ <section id="hero-section" class="relative overflow-hidden bg-white">
+        <div class="container mx-auto px-4 md:px-6">
+            <div class="grid gap-8 lg:grid-cols-2 lg:items-center">
+                
+                <div class="reveal flex flex-col gap-4">
+                    <!-- Updated Heading to a simple P tag with ID -->
+                    <p id="hero-heading">
+                        Choose Our Top <br /> Pick Products
+                    </p>
+                    
+                    <p id="hero-description">
+                        Effortless Cleaning Solutions for a sparkling home. Powerful formulas that cut through grime without harsh chemicals.
+                    </p>
+                    
+                    <div id="hero-button-wrapper">
+                        <button class="home-btn">Products</button>
+                    </div>
+
+                    <div class="mt-8 flex items-center gap-12">
+                        <div id="hero-stats-container">
+        <div class="stat-block">
+        <div class="stat-top-row">
+            <img src="images/bottle-icon.png" alt="Products" class="stat-icon">
+            <div class="stat-number">30+</div>
+        </div>
+        <div class="stat-label">Total Product</div>
+    </div>
+
+    <!-- Stat Item 2 -->
+    <div class="stat-block">
+        <div class="stat-top-row">
+            <img src="images/smiley-icon.png" alt="Customers" class="stat-icon">
+            <div class="stat-number">3000+</div>
+        </div>
+        <div class="stat-label">Happy Customers</div>
+    </div>
+
+</div>
+</div>
+    </div>
+    
+    <!-- BIGGER CIRCLE -->
+    <div class="circle-img" style="width: 520px; height: 520px; box-shadow: 0 0 0 20px #f0f0f0;">
+        <img src="images/hero-woman.jpg" alt="Cleaning woman" style="object-fit: cover;">
+    </div>
+</section>
+
+    <!-- PRODUCT ENQUIRY MODAL -->
+    <div id="enquiryModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeEnquiry()">×</span>
+            <h2 style="margin-bottom:20px;">Product Enquiry</h2>
+            <form>
+                <input type="text" placeholder="Enter your name" required>
+                <input type="tel" placeholder="Enter your contact number" required>
+                <select required>
+                    <option value="">Select category</option>
+                    <option>Air Fresheners</option>
+                    <option>Carwash Liquid</option>
+                    <option>Floor Cleaner</option>
+                    <option>Hand Wash</option>
+                </select>
+                <select required>
+                    <option value="">Select Product Type</option>
+                    <option>Scarlet</option>
+                    <option>Chaand</option>
+                    <option>5L</option>
+                </select>
+                <textarea placeholder="Additional comments" rows="4"></textarea>
+         <div class="recaptcha-box">
+    <div class="recaptcha-left">
+        <input type="checkbox" class="recaptcha-check" required>
+        <span class="recaptcha-text">I'm not a robot</span>
+    </div>
+
+    <div class="recaptcha-right">
+        <img src="images/RecaptchaLogo.svg 1.png" alt="reCAPTCHA" class="recaptcha-logo-img">
+        <p class="recaptcha-privacy-text">Privacy - Terms</p>
+    </div>
+</div>
+                <button type="button" class="btn" style="width:100%; margin-top:15px;">Enquire Now</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- PRODUCT CATEGORIES -->
+     <div class="slider-wrapper">
+    
+    <!-- LEFT ARROW -->
+    <button class="arrow-btn left" onclick="slideLeft()">
+    <img src="images/arrow-left.png" alt="left">
+    
+</button>
+
+    <div class="slider-container">
+            <div class="slider-container" id="categoryCarousel">
+                <div class="slider-track">
+                <!-- Item 1 -->
+                <div class="category-card">
+                    <div class="icon-box"><img src="images/air.png" alt="Icon"></div>
+                    <p class="category-name">Air Freshners</p>
+                </div>
+                <!-- Item 2 -->
+                <div class="category-card">
+                    <div class="icon-box"><img src="images/car.png" alt="Icon"></div>
+                    <p class="category-name">Carwash Liquid</p>
+                </div>
+                <!-- Item 3 -->
+                <div class="category-card">
+                    <div class="icon-box"><img src="images/floor.png" alt="Icon"></div>
+                    <p class="category-name">Floor Cleaner</p>
+                </div>
+                <!-- Item 4 -->
+                <div class="category-card">
+                    <div class="icon-box"><img src="images/Vector.png" alt="Icon"></div>
+                    <p class="category-name">Hand Wash</p>
+                </div>
+                <!-- Item 5 (Hidden initially) -->
+                <div class="category-card">
+                    <div class="icon-box"><img src="images/kitchen.png" alt="Icon"></div>
+                    <p class="category-name">Kitchen Care</p>
+                </div>
+                <!-- Item 6 (Hidden initially) -->
+                <div class="category-card">
+                    <div class="icon-box"><img src="images/Vector.png" alt="Icon"></div>
+                    <p class="category-name">Laundry Care</p>
+                </div>
+                </div>
+            </div>
+        </div>
+         <!-- RIGHT ARROW -->
+    <button class="arrow-btn right" onclick="slideRight()">
+    <img src="images/right aroow.png" alt="right">
+</button>
+     </div>
+</div>
+
+    <!-- EMBRACE SECTION -->
+    <section class="embrace">
+        <div class="embrace-content embrace-left-align">
+            <div>
+                <h6 id="Heading">Embrace a Healthier Home:<br>The Power of Natural Cleaning</h6>
+                <p style="margin:25px 0; font-size:1.1rem;">In today’s world, where environmental awareness is paramount, switching to natural cleaning products offers a wealth of benefits...</p>
+                <button class="btn">About Us</button>
+                <button class="btn" style="background:#fff; color:#003087; border:2px solid #003087; margin-left:10px;">Contact Us</button>
+            </div>
+            <div style="display:flex; gap:20px;">
+                <img src="images/embrace-sink.jpg" style="width:260px; border-radius:12px;" alt="">
+                <img src="images/embrace-floor.jpg" style="width:260px; border-radius:12px;" alt="">
+            </div>
+        </div>
+    </section>
+
+    <!-- FEATURED PRODUCTS -->
+    <section class="section">
+        <div class="products-push-right">
+        <h2 style="margin-bottom:30px; font-size: 30px; font-weight: 700;">Featured Products</h2>
+        <div class="featured-grid" id="featuredCarousel">
+            <div class="product-card">
+                <img src="images/1.png" style="width:100%; height:180px; object-fit:contain;" alt="">
+                <p><strong>Amtoi Air Freshener - Scarlet</strong></p>
+            </div>
+            <div class="product-card">
+                <img src="images/carwash.png" style="width:100%; height:180px; object-fit:contain;" alt="">
+                <p><strong>Amtoi Car Wash Liquid - 5L</strong></p>
+            </div>
+            <div class="product-card">
+                <img src="images/floor cleaner.png" style="width:100%; height:180px; object-fit:contain;" alt="">
+                <p><strong>Amtoi Floor Cleaner - Scarlet</strong></p>
+            </div>
+            <div class="product-card">
+                <img src="images/png2.png" style="width:100%; height:180px; object-fit:contain;" alt="">
+                <p><strong>Amtoi Air Freshener - Chaand</strong></p>
+            </div>
+        </div>
+        </div>
+    </section>
+
+    <!-- OUR SPECIALTIES -->
+    <section class="section" style="background:#f8f9fa;">
+        <h2 id="Heading">Our Specialties</h2>
+        <div class="specialties-row">
+
+    <div class="specialty-left">
+        <ul>
+            <li>Multi-Surface Use</li>
+            <li>Safety and Gentleness</li>
+            <li>Natural Cleaning Power</li>
+            <li>Innovative and Efficient Solutions</li>
+        </ul>
+    </div>
+
+    <div class="specialty-image">
+        <img src="images/image 1.png" style="width:380px; border-radius:50%; box-shadow:0 0 0 15px #fff;" alt="">
+    </div>
+
+    <div class="specialty-right">
+        <ul>
+            <li>Effectiveness</li>
+            <li>Convenience and Efficiency</li>
+            <li>Advanced Cleaning Technology</li>
+            <li>Versatile Cleaning for Your Entire Home</li>
+        </ul>
+    </div>
+
+</div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+   <section class="testimonial-section">
+    <div class="testimonial-push-wrapper">
+        <h2 id="Heading" class="testimonial-title">Testimonials</h2>
+        
+        <div class="testimonials-container">
+            <button class="test-arrow left-test-arrow">
+                 <img src="images/arrow-left.png" alt="Left">
+            </button>
+
+            <div class="testimonials-grid" id="testCarousel">
+                
+                <div class="testimonial-card">
+                    <p class="test-quote">"I was amazed at how quickly this cleaner removed years of grime from my oven. It made a job I dreaded into a breeze. I highly recommend it to anyone looking for a powerful and effective cleaner."</p>
+                    <p class="test-user">- Impressed User</p>
+                </div>
+
+                <div class="testimonial-card">
+                    <p class="test-quote">"This all-purpose cleaner is perfect for my busy household. It's gentle enough for everyday use, yet powerful enough to tackle tough messes. Plus, the fresh scent is a bonus!"</p>
+                    <p class="test-user">- Busy Mom</p>
+                </div>
+
+                <div class="testimonial-card">
+                    <p class="test-quote">"I love that this cleaner is eco-friendly and non-toxic. It’s safe for my family and pets, and it works just as well as harsh chemical cleaners. This glass cleaner leaves my windows streak-free and sparkling!"</p>
+                    <p class="test-user">- Discerning Customer</p>
+                </div>
+                
+            </div> <button class="test-arrow right-test-arrow">
+                <img src="images/right aroow.png" alt="Right">
+            </button>
+
+        </div> </div> </section>
+
+    <!-- FOOTER -->
+     <footer id="main-footer">
+    <div class="footer-wrapper">
+        
+        <!-- LEFT: Branding -->
+        <div class="footer-branding">
+            <img src="images/logo.png" alt="Amtoi Logo" class="footer-logo">
+            <p class="footer-description">
+                Effortless cleaning solutions for a sparkling home. <br>
+                Powerful formulas that cut through grime without harsh chemicals.
+            </p>
+            <div class="footer-socials">
+                <a href="#"><img src="images/facebook-icon.png" alt="FB" class="social-icon"></a>
+                <a href="#"><img src="images/twitter-icon.png" alt="TW" class="social-icon"></a>
+                <a href="#"><img src="images/instagram-icon.png" alt="IG" class="social-icon"></a>
+            </div>
+        </div>
+
+        <!-- RIGHT: Links + Back to Top -->
+        <div class="footer-right-side">
+    <div class="footer-nav-columns">
+        <div class="nav-col">
+            <h4 class="nav-title">Home</h4>
+            <a href="#">About Us</a>
+            <a href="#">Product</a>
+            <a href="#">Contact Us</a>
+        </div>
+        <div class="nav-col">
+            <h4 class="nav-title">Links</h4>
+            <a href="#">Our Story</a>
+            <a href="#">Contact Us</a>
+            <a href="#">Privacy Term</a>
+        </div>
+    </div>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top-btn" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
+        <img src="images/arrow-up.png" alt="Up">
+    </button>
+</div>
+
+    </div>
+
+    <!-- Copyright Bar -->
+    <div class="copyright-bar">
+        <p>Copyright © 2024. All rights reserved.</p>
+    </div>
+</footer>
+    <script>
+        // Open Enquiry Modal
+        function openEnquiry() {
+            document.getElementById("enquiryModal").style.display = "flex";
+        }
+        function closeEnquiry() {
+            document.getElementById("enquiryModal").style.display = "none";
+        }
+
+        // Auto-scroll carousels every 4 seconds (optional nice touch)
+        setInterval(() => {
+            const cat = document.getElementById("categoryCarousel");
+            cat.scrollBy({ left: 280, behavior: "smooth" });
+            if (cat.scrollLeft + cat.clientWidth >= cat.scrollWidth) cat.scrollLeft = 0;
+        }, 4000);
+
+        setInterval(() => {
+            const feat = document.getElementById("featuredCarousel");
+            feat.scrollBy({ left: 250, behavior: "smooth" });
+            if (feat.scrollLeft + feat.clientWidth >= feat.scrollWidth) feat.scrollLeft = 0;
+        }, 4500);
+    </script>
+</body>
+</html>

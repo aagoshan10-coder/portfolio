@@ -1,0 +1,714 @@
+:root {
+            --primary: #003087;     /* dark blue - logo & headings */
+            --accent: #1e40af;      /* button blue */
+            --yellow: #facc15;      /* stars */
+        }
+        
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+    overflow-x: hidden;
+    font-family: 'Geist', sans-serif;
+}
+
+        
+        .logo-img {
+    
+    height: 50px; 
+    width: auto;
+    object-fit: contain;
+    display: block;
+}
+      .home-btn {
+  font-size: 13px;
+  font-weight: 650;
+  color: #FAF9F6;
+  background-color: #1B2D5A;
+  border: none;
+  outline: none;
+  padding: 12px 24px;
+  position: relative;
+  line-height: 24px;
+  border-radius: 9px;
+  box-shadow: 0px 0px 5px #0074B9;
+    
+  
+}  
+        
+        .btn {
+            background: var(--accent);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            cursor: pointer;
+        }
+
+        /* HERO */
+      #hero-section {
+    padding-top: 70px;    /* Adjust this number to reduce/increase gap */
+    padding-bottom: 40px; /* Space below the hero section */
+}
+
+/* Styling for the Heading P tag */
+#hero-heading {
+    font-size: 68px;           /* Default size */
+    font-weight: 700;          /* Bold */
+    color: #1B2D5A;            /* Blue-950 color */
+    line-height: 1.1;          /* Tighten line spacing */
+    letter-spacing: -0.02em;
+    margin-bottom: 0.5rem;
+}
+#hero-description {
+    max-width: 490px;
+    height: 52px;
+    left: 80px;
+    font-size: 16px; /* text-lg */
+    color: #717171;      /* text-gray-500 */
+    margin-top: 10px; 
+    line-height: 26px;
+    letter-spacing: -2%;   /* Gap between Heading and Description */
+}
+
+/* 2. The Button Wrapper */
+#hero-button-wrapper {
+    margin-top: 30px;    /* Gap between Description and Button */
+}
+
+/* 3. The Stats Wrapper (Horizontal Layout) */
+#hero-stats-container {
+    margin-top: 35px;    /* Gap between Button and Stats */
+    display:flex;
+    flex-direction:row;
+    align-items: flex-start;
+    gap: 31px;           /* Vertical space between the two stat items */
+}
+
+
+.stat-label {
+    font-size: 0.875rem; /* text-sm */
+    color: #6b7280;      /* text-gray-500 */
+}
+
+
+        .circle-img {
+            width: 420px;
+            height: 420px;
+            border-radius: 50%;
+            overflow: hidden;
+            box-shadow: 0 0 0 12px #f0f0f0;
+        }
+        .circle-img img { width: 100%; height: 100%; object-fit: cover; }
+
+        /* MODAL */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: rgba(0,0,0,0.6);
+            z-index: 1000;
+            align-items: center;
+            justify-content: center;
+        }
+        .modal-content {
+            background: white;
+            width: 480px;
+            border-radius: 12px;
+            padding: 30px;
+            position: relative;
+        }
+        .modal-content input, .modal-content select, .modal-content textarea {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+        }
+        .close { position: absolute; top: 15px; right: 20px; font-size: 28px; cursor: pointer; }
+
+        /* PRODUCTS SECTION */
+        .products {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        .category-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    border-radius: 1rem;
+    background-color: #1B2D5A;
+    padding: 2rem;
+    color: white;
+    cursor: pointer;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+.icon-circle {
+    display: flex;
+    height: 4rem;
+    width: 4rem;
+    align-items: center;
+    justify-content: center;
+    border-radius: 9999px;
+    background-color: rgba(255, 255, 255, 0.1);
+    transition: transform 0.3s ease;
+}
+.hero-image-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px; 
+    align-items: start;
+}
+.stat-block {
+    display: flex;
+    flex-direction: column;
+    gap: 8px; 
+}
+.slider-container {
+    overflow: hidden;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+
+/* The Moving Track */
+.slider-track {
+    display: flex;
+    top:7px;
+    gap: 24px;
+    transition: transform 0.5s ease-in-out;
+    padding: 10px 0;
+}
+
+/* The Card - Pixel Perfect Square */
+.category-card {
+    flex: 0 0 calc(25% - 20px);
+    width: 261px;
+    height: 226px;
+    background-color: #1B2D5A;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.2s;
+  
+}
+.icon-box {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.icon-box img {
+    width: 79.4px;
+    height: 96.5px;
+    object-fit: contain;
+    filter: brightness(0) invert(1); /* Makes icons white if they are black PNGs */
+}
+
+/* Text inside card */
+.category-name {
+    color: #ffffff;
+    font-weight: 700;
+    font-size: 1.1rem;
+    text-align: center;
+    margin: 0;
+}
+.stat-top-row {
+    display: flex;
+    align-items: center;
+    gap: 12px; 
+}
+
+
+.stat-icon {
+    width: 35px;  
+    height: auto;
+    object-fit: contain;
+}
+
+.stat-number {
+    font-size: 32px;
+    font-weight: 800;
+    color: #1B2D5A; 
+    line-height: 1;
+}
+
+
+.stat-label {
+    font-size: 18px;
+    font-weight: 600;
+    color: #6b7280; 
+    margin: 0;
+}
+        .card {
+           display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    border-radius: 1rem;
+    background-color: #1B2D5A; /* blue-950 */
+    padding: 2rem;
+    color: white;
+    cursor: pointer;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+        }
+        .card img { width: 80px; height: 80px; }
+
+        /* EMBRACE SECTION */
+        .embrace {
+            background: #f8f9fa;
+            padding: 60px 20px;
+        }
+        .embrace-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            gap: 50px;
+            align-items: center;
+        }
+
+        /* FEATURED & SPECIALTIES */
+        .section { max-width: 1200px; margin: 0 auto; padding: 60px 20px; }
+        .featured-grid {
+            display: flex;
+            gap: 20px;
+            overflow-x: auto;
+        }
+        .product-card {
+            border: 1px solid #eee;
+            border-radius: 12px;
+            padding: 15px;
+            text-align: center;
+            min-width: 220px;
+        }
+
+        #main-footer {
+    width: 100%;
+    background-color: #f4f4f4;
+    padding-top: 40px;
+}
+
+.footer-wrapper {
+    max-width: 1250px; /* Aligns with your Testimonials width */
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 0 20px 40px 20px;
+    position: relative;
+}
+
+/* LEFT SIDE */
+.footer-branding {
+    width: 351px; 
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.footer-logo {
+    width: 139px;
+    height: auto;
+}
+
+.footer-description {
+    font-size: 14px;
+    line-height: 24px;
+    color: #4b5563;
+    letter-spacing: -0.02em;
+    margin: 0;
+}
+
+.footer-socials {
+    display: flex;
+    gap: 42px; /* Exact Figma gap */
+    margin-top: 10px;
+}
+
+.social-icon {
+    width: 16.65px;
+    height: 16.65px;
+    object-fit: contain;
+}
+
+/* RIGHT SIDE (Links + Button) */
+.footer-right-side {
+    display: flex;
+    gap: 120px; /* Space between links and button area */
+    align-items: flex-start;
+}
+
+.footer-nav-columns {
+    display: flex;
+    gap: 100px; /* Space between Home column and Links column */
+}
+
+.nav-col {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 60px;
+    margin-right: 95px; /* Space between each link */
+}
+
+.nav-title {
+    font-size: 15px;
+    font-weight: 700;
+    color: #1B2D5A;
+    margin-bottom: 8px; /* Gap below 'Home' or 'Links' before 1st link */
+}
+
+.nav-col a {
+    font-size: 15px;
+    color: #1E2833;
+    text-decoration: none;
+    letter-spacing: -0.18px;
+    transition: color 0.2s;
+}
+
+.nav-col a:hover {
+    color: #1B2D5A;
+}
+
+/* BACK TO TOP BUTTON */
+.back-to-top-btn {
+    width: 40.41px;
+    height: 40.41px;
+    background-color: #1B2D5A;
+    border: none;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    flex-shrink: 0;
+    margin-top: 160px; 
+}
+
+.back-to-top-btn img {
+    width: 16px; /* Icon size inside the 44px circle */
+    height: auto;
+    filter: brightness(0) invert(1); 
+}
+.copyright-bar {
+    width: 100%;
+    background-color: #1B2D5A;
+    padding: 5px 0;
+    text-align: center;
+}
+
+.copyright-bar p {
+    font-size: 13.32px;
+    color: #ffffff;
+    margin: 0;
+}
+#Heading{
+font-size: 30px;
+    font-weight: 700;
+    line-height: 100%;
+    color: #000000;
+    margin-bottom: 40px;
+    text-align: center;   /* 👈 THIS CENTERS THE TEXT */
+    width: 100%;          /* Ensures it takes the full width to center properly */
+    display: block;       /* Makes sure it behaves like a full-width block */
+}
+.slider-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+/* Arrows */
+/* Slider Arrows - Match Photo 1 */
+.slider-wrapper button, .test-arrow {
+    background-color: #1B2D5A; /* Your dark blue brand color */
+    border: none;
+    width: 44px;      /* Exact size for a neat circle */
+    height: 44px;
+    border-radius: 50%; /* Makes it a perfect circle */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    outline: none;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1); /* Subtle shadow for depth */
+    transition: background-color 0.3s ease;
+}
+
+/* Hover effect */
+.slider-wrapper button:hover, .test-arrow:hover {
+    background-color: #1e40af; /* Slightly lighter blue on hover */
+}
+
+/* Make sure the arrow image inside is white */
+.slider-wrapper button img, .test-arrow img {
+    width: 18px; 
+    height: auto;
+    filter: brightness(0) invert(1); /* Forces the icon to be white */
+}
+
+/* LEFT arrow */
+.slider-wrapper button:first-child {
+    left: 10px;
+}
+
+/* RIGHT arrow */
+.slider-wrapper button:last-child {
+    right: 10px;
+}
+.section {
+    max-width: 100% !important;
+}
+.specialties-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;  /* 👈 move content */
+    gap: 120px;
+    width: 100%;
+    padding:40px 20px;
+    margin-left:0;            /* 👈 control how much left shift */
+}
+
+/* text blocks */
+.specialty-left,
+.specialty-right {
+    width: 300px;
+}
+
+/* image center */
+.specialty-image {
+    flex-shrink: 0;
+}
+.specialties-row ul {
+    padding: 0;          /* remove default padding */
+    margin: 0;
+    list-style: none;    /* optional: removes bullets */
+}
+
+.specialties-row li {
+    margin-bottom: 40px; /* 🔥 BIGGER SPACE */
+    line-height: 2;      /* more vertical breathing */
+}
+.products-push-right {
+    margin-left: 180px; /* Adjust this number to push further or less */
+    padding-right: 60px; /* Prevents it from hitting the right edge */
+}
+
+/* Ensure the grid doesn't stretch weirdly */
+.featured-grid {
+    display: flex;
+    gap: 40px;
+    overflow-x: hidden;
+    padding-bottom: 20px; /* Space for the scrollbar if it appears */
+}
+
+/* Make product cards look uniform */
+.product-card {
+    min-width: 250px; 
+    background: #fff;
+    border: 1px solid #eee;
+    border-radius: 12px;
+    padding: 20px;
+    transition: transform 0.3s ease;
+}
+/* Align the Embrace section to the left */
+.embrace-left-align {
+    display: flex;
+    justify-content: flex-start; /* Aligns content to the left */
+    max-width: 1250px;
+    margin-left: 80px; /* Exact match to Featured Products alignment */
+    gap: 50px;
+    padding: 0;
+}
+
+/* Fix the heading size and color inside Embrace */
+#Heading {
+    font-size: 38px; /* Slightly bigger to look more professional */
+    color: #1B2D5A;
+    line-height: 1.2;
+    margin-bottom: 20px;
+}
+
+/* Ensure the text and buttons don't float too far right */
+.embrace-content > div:first-child {
+    max-width: 600px; /* Keeps the text block neat */
+    text-align: left;
+}
+/* --- NEW TESTIMONIALS (MATCHING IMAGE 2) --- */
+
+.testimonial-section {
+    background: #fff; /* White background for this section */
+    padding: 80px 0; /* Add top and bottom breathing room */
+}
+
+/* 1. Alignment Wrapper (Aligns with other sections) */
+.testimonial-push-wrapper {
+    max-width: 1250px; /* Use your existing container width if different */
+    margin: 0 auto; /* Default centering */
+    /* UNCOMMENT THE LINE BELOW AND SET THE NUMBER TO YOUR DESIRED LEFT MARGIN 
+       TO MATCH THE OTHER SECTIONS WE SHIFTED */
+    /* margin-left: 80px; */ 
+    padding: 0 40px; /* Add some default padding */
+}
+
+/* 2. Title Styling */
+.testimonial-title {
+    font-size: 38px; /* Match the large, bold font */
+    font-weight: 800;
+    color: #1B2D5A; /* Dark blue color */
+    text-align: left; /* Image shows it left-aligned within the container */
+    margin-bottom: 50px; /* Space below the title */
+}
+
+/* 3. The Grid and Container */
+.testimonials-container {
+    position: relative; /* Essential for arrow button positioning */
+    display: flex;
+    align-items: center; /* Center the grid vertically */
+    gap: 20px;
+}
+
+.testimonials-grid {
+    display: flex;
+    justify-content: center; /* Center the cards if there are fewer than 3 */
+    gap: 30px; /* Space between cards */
+    width: 100%;
+}
+
+/* 4. The Card - TALL AND CLEAN */
+.testimonial-card {
+    background-color: #f0f0f0; /* Light gray background matching image */
+    flex: 0 0 32%; /* Take up nearly 1/3 of the container width */
+    min-width: 280px; /* Minimum width for the card */
+    min-height: 380px; /* Force the cards to be tall, matching the design */
+    border-radius: 16px; /* Smooth rounded corners */
+    padding: 40px; /* Large internal padding */
+    display: flex;
+    flex-direction: column; /* Stack the quote and the user */
+    justify-content: space-between; /* Push the quote to the top and the user to the bottom */
+    transition: transform 0.3s ease; /* Subtle hover effect */
+}
+
+/* 5. Quote Text */
+.test-quote {
+    font-size: 1.1rem; /* Slightly larger text */
+    color: #4b5563; /* Dark gray text color */
+    line-height: 1.7; /* Increased line-height for modern breathing room */
+    text-align: left;
+    margin: 0;
+}
+
+/* 6. User Text - BOLD AND BOTTOM ALIGNED */
+.test-user {
+    font-size: 1.1rem;
+    font-weight: 700; /* Bold username */
+    color: #000000; /* Black text */
+    text-align: left;
+    margin: 0;
+    padding-top: 20px; /* Space above the name */
+}
+
+/* 7. Hover Effect */
+.testimonial-card:hover {
+    transform: translateY(-8px); /* Card 'pops' up on hover */
+}
+
+/* 8. The Arrow Buttons (Match existing arrow buttons but specific) */
+.test-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: #1B2D5A; /* Dark blue background */
+    border: none;
+    width: 44px; /* Standard button size */
+    height: 44px;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.test-arrow img {
+    width: 18px; /* Icon size within the button */
+    filter: brightness(0) invert(1); /* Ensure icons are white if they are black PNGs */
+}
+
+/* Position the specific arrows */
+.left-test-arrow {
+    left: -22px; /* Position half-off the left edge */
+}
+
+.right-test-arrow {
+    right: -22px; /* Position half-off the right edge */
+}
+/* --- FULL RECAPTCHA LOOK --- */
+
+.recaptcha-box {
+    display: flex;
+    justify-content: space-between; /* Pushes content to far left and far right */
+    align-items: center;
+    background-color: #f9f9f9;
+    border: 1px solid #d3d3d3;
+    border-radius: 3px;
+    padding: 10px 12px;
+    width: 300px;
+    margin: 20px 0;
+    box-shadow: 0 0 4px rgba(0,0,0,0.05);
+}
+
+.recaptcha-left {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.recaptcha-check {
+    width: 24px !important;
+    height: 24px !important;
+    cursor: pointer;
+}
+
+.recaptcha-text {
+    font-size: 14px;
+    font-family: 'Roboto', sans-serif;
+    color: #000;
+}
+
+/* Right side branding */
+.recaptcha-right {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.recaptcha-logo-img {
+    width: 32px; /* Small logo size */
+    height: auto;
+    margin-bottom: 2px;
+}
+
+.recaptcha-privacy-text {
+    font-size: 8px; /* Very small text like the original */
+    color: #555;
+    margin: 0;
+    text-align: center;
+    line-height: 1;
+}
